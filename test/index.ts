@@ -37,22 +37,8 @@ function getOptions() {
   const scenarioParam = params.get('scenario');
   const scenario = scenarioParam ?? 'simpleCircle';
 
-  const rendererParam = params.get('renderer');
-  let renderer = 'zelos';
-  // For backwards compatibility with previous behaviour, support
-  // (e.g.) ?geras as well as ?renderer=geras:
-  if (rendererParam) {
-    renderer = rendererParam;
-  } else if (params.get('geras')) {
-    renderer = 'geras';
-  } else if (params.get('thrasos')) {
-    renderer = 'thrasos';
-  }
-
-  const toolboxParam = params.get('toolbox');
-  const toolbox = toolboxParam ?? 'toolbox';
-  const toolboxObject =
-    toolbox === 'flyout' ? toolboxFlyout : toolboxCategories;
+  const renderer = 'zelos';
+  const toolboxObject = toolboxCategories;
 
   // Update form inputs to match params, but only after the page is
   // fully loaded as Chrome (at least) tries to restore previous form
@@ -60,8 +46,6 @@ function getOptions() {
   // result in the form inputs being out-of-sync with the actual
   // options when doing browswer page navigation.
   window.addEventListener('load', () => {
-    // (document.getElementById('toolbox') as HTMLSelectElement).value = toolbox;
-    // (document.getElementById('renderer') as HTMLSelectElement).value = renderer;
     (document.getElementById('scenario') as HTMLSelectElement).value = scenario;
   });
 
