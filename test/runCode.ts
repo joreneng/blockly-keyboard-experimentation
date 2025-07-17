@@ -15,7 +15,13 @@ import {utils as BlocklyUtils} from 'blockly';
  *  Run generated p5.js code in the keyboard navigation test page.
  */
 export function runCode() {
-  const code = javascriptGenerator.workspaceToCode(Blockly.getMainWorkspace());
+  // Create audio elements that will be available in the sketch scope
+  const setupCode = `
+      const plantingSound = new Audio('sounds/planting.mp3');
+      const harvestingSound = new Audio('sounds/harvest-plant.mp3');
+      const wateringSound = new Audio('sounds/water-plant.mp3');
+    `;
+  const code = javascriptGenerator.workspaceToCode(Blockly.getMainWorkspace()) + setupCode;
   const p5outputDiv = document.getElementById('p5output');
   if (p5outputDiv) {
     // Clear the old canvas.

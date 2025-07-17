@@ -54,6 +54,132 @@ export const p5CategoryContents = [
     kind: 'block',
     type: 'write_text_without_shadow',
   },
+  {
+    kind: 'block',
+    type: 'p5_ellipse',
+    inputs: {
+      X: {
+        shadow: {
+          type: 'math_number',
+          fields: {
+            NUM: 150,
+          },
+        },
+      },
+      Y: {
+        shadow: {
+          type: 'math_number',
+          fields: {
+            NUM: 150,
+          },
+        },
+      },
+      WIDTH: {
+        shadow: {
+          type: 'math_number',
+          fields: {
+            NUM: 5,
+          },
+        },
+      },
+      HEIGHT: {
+        shadow: {
+          type: 'math_number',
+          fields: {
+            NUM: 5,
+          },
+        },
+      },
+    },
+  },
+  {
+    kind: 'block',
+    type: 'p5_draw_grid',
+    inputs: {
+      X: {
+        shadow: {
+          type: 'math_number',
+          fields: {
+            NUM: 4,
+          },
+        },
+      },
+      Y: {
+        shadow: {
+          type: 'math_number',
+          fields: {
+            NUM: 4,
+          },
+        },
+      },
+    },
+  },
+  {
+    kind: 'block',
+    type: 'plant',
+    inputs: {
+      X: {
+        shadow: {
+          type: 'math_number',
+          fields: {
+            NUM: 0,
+          },
+        },
+      },
+      Y: {
+        shadow: {
+          type: 'math_number',
+          fields: {
+            NUM: 0,
+          },
+        },
+      },
+    },
+  },
+  {
+    kind: 'block',
+    type: 'harvest',
+    inputs: {
+      X: {
+        shadow: {
+          type: 'math_number',
+          fields: {
+            NUM: 2,
+          },
+        },
+      },
+      Y: {
+        shadow: {
+          type: 'math_number',
+          fields: {
+            NUM: 2,
+          },
+        },
+      },
+    },
+  },
+  {
+    kind: 'block',
+    type: 'water',
+    inputs: {
+      X: {
+        shadow: {
+          type: 'math_number',
+          fields: {
+            NUM: 1,
+          },
+        },
+      },
+      Y: {
+        shadow: {
+          type: 'math_number',
+          fields: {
+            NUM: 1,
+          },
+        },
+      },
+    },
+  },
 ];
 
 export const toolbox = {

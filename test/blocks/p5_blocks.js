@@ -252,6 +252,8 @@ const draw_emoji = {
         ['❤️', '❤️'],
         ['✨', '✨'],
         ['🐻', '🐻'],
+        ['🌱', '🌱'],
+        ['🌼', '🌼'],
       ],
     },
     {
@@ -335,6 +337,94 @@ const textBlock = {
   'colour': 225,
 };
 
+const drawGrid = {
+  'type': 'p5_draw_grid',
+  'message0': 'Draw a square grid of %1 x %2',
+  'args0': [
+    {
+      'type': 'input_value',
+      'name': 'X',
+      'check': 'Number',
+    },
+    {
+      'type': 'input_value',
+      'name': 'Y',
+      'check': 'Number',
+    }
+  ],
+  'previousStatement': null,
+  'nextStatement': null,
+  'colour': 195,
+  'tooltip': 'Draw a square grid of the specified size.',
+  'helpUrl': '',
+};
+
+const plant = {
+  'type': 'plant',
+  'message0': 'plant 🌱 at x: %1 y: %2',
+  'args0': [
+    {
+      'type': 'input_value',
+      'name': 'X',
+      'check': 'Number'
+    },
+    {
+      'type': 'input_value',
+      'name': 'Y',
+      'check': 'Number'
+    }
+  ],
+  'previousStatement': null,
+  'nextStatement': null,
+  'colour': 120,
+  'tooltip': 'Plant an emoji at specified coordinates',
+  'helpUrl': ''
+};
+
+const harvest = {
+  'type': 'harvest',
+  'message0': 'harvest at x: %1 y: %2',
+  'args0': [
+    {
+      'type': 'input_value',
+      'name': 'X',
+      'check': 'Number'
+    },
+    {
+      'type': 'input_value',
+      'name': 'Y',
+      'check': 'Number'
+    }
+  ],
+  'previousStatement': null,
+  'nextStatement': null,
+  'colour': 0,
+  'tooltip': 'Remove plant at specified coordinates',
+  'helpUrl': ''
+};
+
+const water = {
+  'type': 'water',
+  'message0': 'water tile at x: %1 y: %2',
+  'args0': [
+    {
+      'type': 'input_value',
+      'name': 'X',
+      'check': 'Number'
+    },
+    {
+      'type': 'input_value',
+      'name': 'Y',
+      'check': 'Number'
+    }
+  ],
+  'previousStatement': null,
+  'nextStatement': null,
+  'colour': 210,
+  'tooltip': 'Change tile color at specified coordinates',
+  'helpUrl': ''
+};
+
 // Create the block definitions for all the JSON-only blocks.
 // This does not register their definitions with Blockly.
 const jsonBlocks = Blockly.common.createBlockDefinitionsFromJsonArray([
@@ -347,6 +437,10 @@ const jsonBlocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   writeTextWithoutShadow,
   writeTextWithShadow,
   textBlock,
+  drawGrid,
+  plant,
+  harvest,
+  water,  // Add the new blocks here
 ]);
 
 export const blocks = {

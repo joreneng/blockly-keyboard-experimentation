@@ -37,22 +37,29 @@ const sunnyDay = {
                         'type': 'colour_picker',
                         'id': 'B:zpi7kg+.GF_Dutd9GL',
                         'fields': {
-                          'COLOUR': '#9999ff',
+                          'COLOUR': '#9e6d30',
                         },
                       },
                     },
                   },
                   'next': {
                     'block': {
-                      'type': 'p5_stroke',
+                      'type': 'p5_draw_grid',
                       'id': 'I}RN|0g#W,(kh2Cx}9)Z',
                       'inputs': {
-                        'COLOR': {
+                        'X': {
                           'shadow': {
-                            'type': 'colour_picker',
-                            'id': '`i.j^X!DV:9;]X5[6Lq/',
+                            'type': 'math_number',
                             'fields': {
-                              'COLOUR': '#ffff00',
+                              'NUM': 4,
+                            },
+                          },
+                        },
+                        'Y': {
+                          'shadow': {
+                            'type': 'math_number',
+                            'fields': {
+                              'NUM': 4,
                             },
                           },
                         },
@@ -91,43 +98,23 @@ const sunnyDay = {
         'inputs': {
           'STATEMENTS': {
             'block': {
-              'type': 'p5_ellipse',
+              'type': 'plant',
               'id': '_}!@OHwjAb,2Gi8nT0}L',
               'inline': true,
               'inputs': {
                 'X': {
                   'shadow': {
                     'type': 'math_number',
-                    'id': '_0MCsD2LK%j.$YOf3#R/',
                     'fields': {
-                      'NUM': 100,
+                      'NUM': 0,
                     },
                   },
                 },
                 'Y': {
                   'shadow': {
                     'type': 'math_number',
-                    'id': 'gq(POne}j:hVw%C3t{vx',
                     'fields': {
-                      'NUM': 100,
-                    },
-                  },
-                },
-                'WIDTH': {
-                  'shadow': {
-                    'type': 'math_number',
-                    'id': '3RP[-C^1|8zA.^]81M0m',
-                    'fields': {
-                      'NUM': 50,
-                    },
-                  },
-                },
-                'HEIGHT': {
-                  'shadow': {
-                    'type': 'math_number',
-                    'id': '8kKn|lOU8xckQ+#+Q7=~',
-                    'fields': {
-                      'NUM': 50,
+                      'NUM': 0,
                     },
                   },
                 },

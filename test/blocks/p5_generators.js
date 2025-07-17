@@ -6,6 +6,7 @@
  */
 
 import {Order} from 'blockly/javascript';
+import {snippets} from './p5_snippets.js';
 
 // Export all the code generators for our custom blocks,
 // but don't register them with Blockly yet.
@@ -64,7 +65,10 @@ forBlock['p5_ellipse'] = function (block, generator) {
   const y = generator.valueToCode(block, 'Y', Order.NONE) || 0;
   const width = generator.valueToCode(block, 'WIDTH', Order.NONE) || 0;
   const height = generator.valueToCode(block, 'HEIGHT', Order.NONE) || 0;
-  return `sketch.ellipse(${x}, ${y}, ${width}, ${height});\n`;
+  const code = `sketch.fill('white');
+sketch.stroke('black');
+sketch.ellipse(${x}, ${y}, ${width}, ${height});\n`;
+  return code;
 };
 
 forBlock['draw_emoji'] = function (block) {
@@ -104,3 +108,36 @@ sketch.textSize(100);
 sketch.text(${text}, 50, 350);\n`;
   return code;
 };
+
+forBlock['p5_draw_grid'] = function (block, generator) {
+  const x = generator.valueToCode(block, 'X', Order.NONE) || 0;
+  const y = generator.valueToCode(block, 'Y', Order.NONE) || 0;
+  const code = `for (var x = 0; x < 400; x += 400 / ${x}) {
+		for (var y = 0; y < 400; y += 400 / ${y}) {
+			sketch.stroke(0);
+			sketch.strokeWeight(1);
+			sketch.line(x, 0, x, 400);
+			sketch.line(0, y, 400, y);
+		}
+	}\n`;
+  return code;
+};
+
+forBlock['plant'] = function(block, generator) {
+  const x = generator.valueToCode(block, 'X', Order.NONE) || 0;
+  const y = generator.valueToCode(block, 'Y', Order.NONE) || 0;
+  return snippets.plant(x, y);
+};
+
+forBlock['harvest'] = function(block, generator) {
+  const x = generator.valueToCode(block, 'X', Order.NONE) || 0;
+  const y = generator.valueToCode(block, 'Y', Order.NONE) || 0;
+  return snippets.harvest(x, y);
+};
+
+forBlock['water'] = function(block, generator) {
+  const x = generator.valueToCode(block, 'X', Order.NONE) || 0;
+  const y = generator.valueToCode(block, 'Y', Order.NONE) || 0;
+  return snippets.water(x, y);
+};
+
